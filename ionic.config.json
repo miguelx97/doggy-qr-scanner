@@ -1,0 +1,7 @@
+{
+  "name": "doggy-qr-scan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
