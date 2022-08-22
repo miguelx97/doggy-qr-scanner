@@ -26,7 +26,8 @@ export class HomePage {
   async startScan() {
     document.body.classList.add("qrscanner"); // add the qrscanner class to body
     this.isScanning = true
-    const result = await BarcodeScanner.startScan({ targetedFormats: [SupportedFormat.QR_CODE] }); // startscan
+    const result = await BarcodeScanner.startScan({ targetedFormats: [SupportedFormat.QR_CODE] });
+    // alert(JSON.stringify(result))
     document.body.classList.remove("qrscanner"); // remove the qrscanner from the body       
     if (result.hasContent) {
       this.isScanning = true

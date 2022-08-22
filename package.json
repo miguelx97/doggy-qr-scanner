@@ -5,11 +5,10 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "web": "ionic build --prod -- --base-href ./",
+    "android": "ionic build --prod && npx cap copy android && npx cap open android",
+    "ios": "ionic build --prod && cap copy ios && cap open ios",
+    "android:test": "ionic build && cap copy android && cap open android"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "@capacitor-community/barcode-scanner": "^3.0.0",
+    "@capacitor/android": "4.1.0",
     "@capacitor/app": "4.0.1",
     "@capacitor/browser": "^4.0.1",
     "@capacitor/core": "4.1.0",
