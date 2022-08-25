@@ -18,9 +18,15 @@ export class HomePage {
   isScanning:boolean
 
   async ionViewDidEnter(): Promise<void> {
+    this.isScanning = true;
+    await wait(2000)
+    this.isScanning = false;
+    await wait(300)
+    this.isScanning = true
     // this.scannerStatus = ScannerStatus.CLOSED
     await this.userPermissions();
     await this.startScan();
+
   }
 
   async startScan() {
@@ -30,7 +36,7 @@ export class HomePage {
     // alert(JSON.stringify(result))
     document.body.classList.remove("qrscanner"); // remove the qrscanner from the body       
     if (result.hasContent) {
-      this.isScanning = true
+      this.isScanning = false
       this.scanSuccess(result.content);
     };
   };

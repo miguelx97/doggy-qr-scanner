@@ -1,27 +1,43 @@
-#container {
-  text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.body {
+  z-index: 1; 
+  .title {
+    letter-spacing: 1.5px;
+    font-size: 45px;
+    font-family: 'Dancing Script', cursive;
+    color:var(--ion-color-secondary)
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+img {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+.scan-wrapper {
+    // border:2px solid;
+    // border-color: #fff;
+    display: flex;
+    left: 50%;
+    // height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    justify-content: center;
 
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+    .scan-circle{
+      width: 93%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      box-shadow: 0 0 0 100vw var(--ion-color-tertiary);
+      content: '';
+    }
 }
