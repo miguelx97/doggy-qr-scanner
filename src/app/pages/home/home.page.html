@@ -1,12 +1,16 @@
 <div class="limit-size body">
     <h1 class="title">Doggy Scanner</h1>
-    <ion-button (click)="startScan()" expand="block" fill="clear" shape="round">
-        Restart
-    </ion-button>
 </div>
 <div class="scan-wrapper">
-    <img [src]="(isScanning)?'assets/images/dog1.svg':'assets/images/dog2.svg'">
+    <img src="assets/images/dog1.svg" #image>
     <div class="scan-circle">
-        
+
     </div>
 </div>
+
+<ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-icon name="flashlight-outline" (click)="toggleTorch()" color="primary"></ion-icon>
+</ion-fab>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-icon name="refresh-outline" (click)="startScan()" color="primary"></ion-icon>
+</ion-fab>

@@ -1,12 +1,12 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
 .body {
   z-index: 1; 
   .title {
-    letter-spacing: 1.5px;
-    font-size: 45px;
-    font-family: 'Dancing Script', cursive;
+    letter-spacing: 2.5px;
+    font-size: 50px;
+    // font-family: 'Dancing Script', cursive;
+    font-family: 'Rancho', cursive;
     color:var(--ion-color-secondary)
   }
 }
@@ -40,4 +40,9 @@ img {
       box-shadow: 0 0 0 100vw var(--ion-color-tertiary);
       content: '';
     }
+}
+
+ion-fab ion-icon {
+  font-size: 25px;
+  padding: 10px;
 }

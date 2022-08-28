@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BarcodeScanner, SupportedFormat } from '@capacitor-community/barcode-scanner';
 import { Browser } from '@capacitor/browser';
 import { UiService } from 'src/app/services/ui.service';
@@ -15,14 +15,14 @@ export class HomePage {
     private ui:UiService
   ) {}
 
-  isScanning:boolean
+  @ViewChild('image', { static: true }) image: ElementRef;
 
   async ionViewDidEnter(): Promise<void> {
-    this.isScanning = true;
-    await wait(2000)
-    this.isScanning = false;
-    await wait(300)
-    this.isScanning = true
+    // this.isScanning = true;
+    // await wait(2000)
+    // this.isScanning = false;
+    // await wait(300)
+    // this.isScanning = true
     // this.scannerStatus = ScannerStatus.CLOSED
     await this.userPermissions();
     await this.startScan();
@@ -31,17 +31,15 @@ export class HomePage {
 
   async startScan() {
     document.body.classList.add("qrscanner"); // add the qrscanner class to body
-    this.isScanning = true
     const result = await BarcodeScanner.startScan({ targetedFormats: [SupportedFormat.QR_CODE] });
     // alert(JSON.stringify(result))
     document.body.classList.remove("qrscanner"); // remove the qrscanner from the body       
     if (result.hasContent) {
-      this.isScanning = false
-      this.scanSuccess(result.content);
+      await this.scanSuccess(result.content);
     };
   };
 
-  async scanSuccess(scanUrl:string){
+  async scanSuccess(scanUrl:string):Promise<void>{
     let regExWeb = /\S+\.[a-z]{2,5}/g;
     const arrRegexWeb = scanUrl.match(regExWeb);
     if(!arrRegexWeb) {
@@ -50,9 +48,15 @@ export class HomePage {
       return;
     }
 
-    wait(500).then(async ()=> {
-      await Browser.open({ url: scanUrl });
-    })
+    this.changeImage(2)
+    await wait(600)
+    this.changeImage(1)
+    await wait(200)
+    await Browser.open({ url: scanUrl });
+  }
+
+  changeImage(imgNumber:number) {
+    this.image.nativeElement.src = `assets/images/dog${imgNumber}.svg`
   }
 
   toggleTorch = async () => await BarcodeScanner.toggleTorch();

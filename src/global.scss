@@ -28,8 +28,8 @@
 
 .scanner-ui { display: none; }
 .scanner-hide { visibility: visible; }
-
-body.qrscanner { background-color: transparent; }
+body { background-image: linear-gradient(to right, #fbe0c4 , #fcead8);; }
+body.qrscanner { background-color: transparent; background-image:none; }
 body.qrscanner .scanner-ui { display: block; }
 body.qrscanner .scanner-hide { visibility: hidden; }
 
