@@ -26,14 +26,19 @@ export class HomePage {
     // this.scannerStatus = ScannerStatus.CLOSED
     await this.userPermissions();
     await this.startScan();
-
   }
 
+  get bodyCss():DOMTokenList { return document.body.classList}
+
   async startScan() {
-    document.body.classList.add("qrscanner"); // add the qrscanner class to body
+    if(this.bodyCss.contains("qrscanner")) {
+      console.log("Scanner already working");      
+      return;
+    }
+    this.bodyCss.add("qrscanner"); // add the qrscanner class to body
     const result = await BarcodeScanner.startScan({ targetedFormats: [SupportedFormat.QR_CODE] });
     // alert(JSON.stringify(result))
-    document.body.classList.remove("qrscanner"); // remove the qrscanner from the body       
+    this.bodyCss.remove("qrscanner"); // remove the qrscanner from the body       
     if (result.hasContent) {
       await this.scanSuccess(result.content);
     };
