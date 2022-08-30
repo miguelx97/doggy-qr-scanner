@@ -1,0 +1,15 @@
+{
+    "app": "Doggy Scanner"
+    , "modal": {
+        "header": {
+            "ask-permissions":"Permiso de cámara"
+            , "ask-permissions-denied":"Permiso de cámara"
+            , "":""
+        }
+        , "body": {
+            "ask-permissions":"Scanii necesita poder usar la cámara para ver escanear el QR del menú"
+            , "ask-permissions-denied":"Para poder usar scanii tienes que pulsar en \"Permisos\" y permitir \"Cámara\" y \"Ubicación\""
+            , "":""
+        }
+    }
+}
