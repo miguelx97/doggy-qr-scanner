@@ -18,6 +18,7 @@ export class AppComponent {
   async setLanguage(){
     let language:string = Language.ENGLISH;
     const languageDevice: string = (await Device.getLanguageCode()).value;
+    alert(languageDevice)
     const listLanguage = Language.list().filter(lang => (new RegExp("\\b" + lang + "\\b")).test(languageDevice))
     if(listLanguage.length) language = listLanguage[0];
     if(language !== this.translate.currentLang) this.translate.use(language);

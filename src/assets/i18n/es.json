@@ -7,8 +7,8 @@
             , "":""
         }
         , "body": {
-            "ask-permissions":"Scanii necesita poder usar la cámara para ver escanear el QR del menú"
-            , "ask-permissions-denied":"Para poder usar scanii tienes que pulsar en \"Permisos\" y permitir \"Cámara\" y \"Ubicación\""
+            "ask-permissions":"Doggy Scanner necesita poder usar la cámara para ver escanear el QR del menú"
+            , "ask-permissions-denied":"Para poder usar Doggy Scanner tienes que pulsar en \"Permisos\" y permitir \"Cámara\" y \"Ubicación\""
             , "":""
         }
     }

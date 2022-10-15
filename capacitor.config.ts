@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'doggy-qr-scan',
+  appId: 'miguel.martin.doggyscanner',
+  appName: 'doggy-scanner',
   webDir: 'www',
   bundledWebRuntime: false
 };
